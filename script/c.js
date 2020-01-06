@@ -1,43 +1,44 @@
-let x, y, z = 0;
-let t = setInterval(function () {
-    x = Math.floor(Math.random() * 10);
-    y = Math.floor(Math.random() * 10);
-    z = Math.floor(Math.random() * 10);
-
-    $('#nid-1').text(x.toString());
-    $('#nid-2').text(y.toString());
-    $('#nid-3').text(z.toString());
-}, 100);
-
 let ra = $('#raffle');
 
+$('#random').on('click', () => {
+    let c = setInterval(function () {
+        let x = Math.floor(Math.random() * 10);
+        let y = Math.floor(Math.random() * 10);
+        let z = Math.floor(Math.random() * 10);
+
+        $('#inbox').val('' + x + y + z);
+    }, 100);
+    setTimeout(function () {
+        clearInterval(c)
+    }, 600);
+
+
+});
 
 ra.on('click', async () => {
-    clearInterval(t);
-    // ra.modal('show');
-    $('#raffle-val').text('' + x + y + z);
+    let inb = $('#inbox').val();
+    if (parseInt(inb) >= 0 && parseInt(inb) <= 999) {
 
+        $('#pay-modal').modal('show');
+        $('#raffle-val').text($('#inbox').val());
+
+    } else {
+        if (inb === '') $('#invalid-text').text('No number provided. Click random to generate random number');
+        else $('#invalid-text').text('Raffle number must lie between 0 and 999');
+        $('#invalid').modal('show');
+    }
 });
 
-$('#raffle-close').on('click', () => {
-    t = setInterval(function () {
-        x = Math.floor(Math.random() * 10);
-        y = Math.floor(Math.random() * 10);
-        z = Math.floor(Math.random() * 10);
 
-        $('#nid-1').text(x.toString());
-        $('#nid-2').text(y.toString());
-        $('#nid-3').text(z.toString());
-    }, 100);
-});
 $('#draw-again').on('click', () => {
-    t = setInterval(function () {
-        x = Math.floor(Math.random() * 10);
-        y = Math.floor(Math.random() * 10);
-        z = Math.floor(Math.random() * 10);
+    let c = setInterval(function () {
+        let x = Math.floor(Math.random() * 10);
+        let y = Math.floor(Math.random() * 10);
+        let z = Math.floor(Math.random() * 10);
 
-        $('#nid-1').text(x.toString());
-        $('#nid-2').text(y.toString());
-        $('#nid-3').text(z.toString());
+        $('#inbox').val('' + x + y + z);
     }, 100);
+    setTimeout(function () {
+        clearInterval(c)
+    }, 600);
 });

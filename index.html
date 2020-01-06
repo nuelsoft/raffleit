@@ -13,7 +13,24 @@
 
 <body>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+<div class="modal" id="invalid" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Invalid Draw</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="invalid-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="pay-modal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -30,9 +47,9 @@
                 <button type="button" class="btn btn-secondary" id="draw-again"
                         data-dismiss="modal">Draw again
                 </button>
-<!--                <button type="button" class="btn btn-info">Proceed to payment method</button>-->
+                <!--                <button type="button" class="btn btn-info">Proceed to payment method</button>-->
                 <form>
-                    <a class="flwpug_getpaid"
+                    <a class="flwpug_getpaid btn-primary"
                        data-PBFPubKey="FLWPUBK_TEST-4be08a2d552a7dcd0056882cacc767d3-X"
                        data-txref="rave-123456"
                        data-amount="1000"
@@ -43,7 +60,8 @@
                        data-country="NG"
                        data-redirect_url="https://raffleit.netlify.com"></a>
 
-                    <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+                    <script type="text/javascript"
+                            src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
                 </form>
             </div>
         </div>
@@ -53,14 +71,29 @@
 <div class="drop">
     <div class="p-3 brand">raffle<span class="text-info h-text">it</span></div>
     <div class="ns-container">
-        <div class="row ns">
-            <div class="col n" id="nid-1">0</div>
-            <div class="col n cl" id="nid-2">0</div>
-            <div class="col n" id="nid-3">0</div>
+        <!--        <div class="row ns">-->
+        <!--            <div class="col n" id="nid-1">0</div>-->
+        <!--            <div class="col n cl" id="nid-2">0</div>-->
+        <!--            <div class="col n" id="nid-3">0</div>-->
+        <!--        </div>-->
+        <div class="m-3 text-left font-weight-light" style="font-size: 150%">
+            Please, Enter a number between 0 and 999
+        </div>
+        <div class="input-group mb-3">
+            <input type="number" class="form-control-lg form-control" id="inbox" required
+                   style="height: 3.5em !important;"
+                   placeholder="Number" aria-label="raffle number"
+                   aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="random">Random</button>
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid zip.
+            </div>
         </div>
 
         <input type="button" id="raffle" class="btn raffle stop btn-info btn-lg mt-3" value="Raffle" data-toggle="modal"
-               data-target="#exampleModalCenter"/>
+        />
 
 
     </div>
