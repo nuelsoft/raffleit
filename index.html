@@ -30,7 +30,21 @@
                 <button type="button" class="btn btn-secondary" id="draw-again"
                         data-dismiss="modal">Draw again
                 </button>
-                <button type="button" class="btn btn-primary">Proceed to payment method</button>
+<!--                <button type="button" class="btn btn-info">Proceed to payment method</button>-->
+                <form>
+                    <a class="flwpug_getpaid"
+                       data-PBFPubKey="FLWPUBK_TEST-4be08a2d552a7dcd0056882cacc767d3-X"
+                       data-txref="rave-123456"
+                       data-amount="1000"
+                       data-customer_email="user@example.com"
+                       data-meta-flightID="APX0093GHK"
+                       data-currency="NGN"
+                       data-pay_button_text="Pay Now"
+                       data-country="NG"
+                       data-redirect_url="https://raffleit.netlify.com"></a>
+
+                    <script type="text/javascript" src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+                </form>
             </div>
         </div>
     </div>
