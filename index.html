@@ -40,33 +40,36 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                You drew <span id="raffle-val" class="text-info rv"></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="draw-again"
-                        data-dismiss="modal">Draw again
-                </button>
-                <!--                <button type="button" class="btn btn-info">Proceed to payment method</button>-->
-                <form>
-                    <a class="flwpug_getpaid btn-primary"
-                       data-PBFPubKey="FLWPUBK_TEST-4be08a2d552a7dcd0056882cacc767d3-X"
-                       data-txref="rave-123456"
-                       data-amount="1000"
-                       data-customer_email="user@example.com"
-                       data-meta-flightID="APX0093GHK"
-                       data-currency="NGN"
-                       data-pay_button_text="Pay Now"
-                       data-country="NG"
-                       data-redirect_url="https://raffleit.netlify.com"></a>
+            <form>
+                <div class="modal-body">
+                    You drew <span id="raffle-val" class="text-info rv"></span>
+                </div>
+                <div class="form-group ml-3 mr-3 mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="John Mark" required>
+                </div>
+                <div class="form-group ml-3 mr-3 mb-3">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="+2349035458464" required>
+                </div>
+                <div class="form-group ml-3 mr-3 mb-3">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email"
+                           placeholder="name@example.com" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="draw-again"
+                            data-dismiss="modal">Draw again
+                    </button>
 
-                    <script type="text/javascript"
-                            src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-                </form>
-            </div>
+                    <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+                    <button type="button" class="btn btn-info" onClick="payWithRave()">Pay Now</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 
 <div class="drop">
     <div class="p-3 brand">raffle<span class="text-info h-text">it</span></div>
