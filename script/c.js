@@ -59,7 +59,7 @@ function payWithRave() {
         amount: 1000,
         customer_phone: phone.val(),
         currency: "NGN",
-        redirect_url: "https:api-raffleit.herokuapp.com/api/draw",
+        redirect_url: "https://api-raffleit.herokuapp.com/api/draw",
         txref: $('#name').val() + ':' + phone.val() + ':' + email + ':' + v + ':' + Date.now(),
         hosted_payment: 1,
         meta: [{
