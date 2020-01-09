@@ -45,10 +45,7 @@ $('#draw-again').on('click', () => {
 
 const API_publicKey = "FLWPUBK_TEST-4be08a2d552a7dcd0056882cacc767d3-X";
 
-function payWithRave() {
-
-    console.log('called');
-
+function pay() {
     let phone = $('#phone');
     let v = $('#inbox').val();
     let email = $('#email').val();
@@ -83,5 +80,41 @@ function payWithRave() {
         //     x.close(); // use this to close the modal immediately after payment.
         // }
     });
+}
 
+
+function payWithRave() {
+
+    if (validateName($('#name').val()) && validatePhone($('#phone').val()) && validateEmail($('#email').val())) pay()
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    let t = re.test(String(email).toLowerCase());
+    let e = $('#email-val');
+    if (t) e.addClass('d-none');
+    else e.removeClass('d-none');
+
+    return t;
+}
+
+function validatePhone(phone) {
+    var re = /^\d{11}/;
+
+    let t = re.test(String(phone));
+    let p = $('#phone-val');
+    if (t) p.addClass('d-none');
+    else p.removeClass('d-none');
+    return t;
+}
+
+function validateName(name) {
+    let t = 1 <= name.length;
+
+    let n = $('#name-val');
+    if (t) n.addClass('d-none');
+    else n.removeClass('d-none');
+
+    return t;
 }
