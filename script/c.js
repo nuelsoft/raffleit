@@ -60,7 +60,7 @@ function pay() {
     var x = getpaidSetup({
         PBFPubKey: API_publicKey,
         customer_email: email,
-        amount: 1000,
+        amount: 500,
         customer_phone: phone.val(),
         currency: "NGN",
         redirect_url: "https://api-raffleit.herokuapp.com/api/draw",
