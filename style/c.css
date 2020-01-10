@@ -5,14 +5,22 @@ body, html {
 }
 
 body {
-    background-image: url(../image/backdrop.jpg);
+    /*background-image: url(../image/backdrop.jpg);*/
     background-repeat: no-repeat;
+}
+
+.unOne {
+    width: 100%;
+    height: 100%;
+
+    background-color: red;
 }
 
 .drop {
     width: 100%;
     height: 100%;
     background: #cccccc91;
+    z-index: 10;
 
 }
 

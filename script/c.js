@@ -1,5 +1,12 @@
 let ra = $('#raffle');
 
+$('.carousel').carousel({
+    interval: 3000
+});
+
+// $('.carousel').carousel();
+
+
 $('#random').on('click', () => {
     let c = setInterval(function () {
         let x = Math.floor(Math.random() * 10);

@@ -6,14 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/bootstrap.css"/>
-    <link rel="stylesheet" href="style/c.css"/>
 
-    <title>Raffle</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Righteous&display=swap" rel="stylesheet">
+    <title>Bad Comments Movie Raffle</title>
 </head>
+
+<style>
+    body, html {
+        font-family: 'Righteous', cursive;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    body {
+        background: #6b6253;
+    }
+
+    .Text {
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    .PromoImage {
+        height: 100%;
+        background-image: url("image/bg_1.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .FullHeight {
+        height: 100%;
+    }
+
+    .FullWidth {
+        width: 100%;
+    }
+
+    .Mask {
+        background: rgba(95, 91, 88, 0.8);
+    }
+
+    .Circle {
+        border-radius: 50%;
+    }
+
+    .MainTitle {
+        color: #fee862;
+    }
+
+    .Title {
+        font-size: 300%;
+        /*border-left: 5px solid;*/
+    }
+
+    .FiftyPercent {
+        width: 50%;
+        text-align: center;
+    }
+
+    .Large {
+        font-size: 150%;
+    }
+
+    .TextAccentTheme {
+        color: #6b6253;
+    }
+
+
+    /*.LayerTopSmallScreen {*/
+    /*    overflow-y: scroll;*/
+    /*}*/
+
+    .ButtonTheme {
+        color: #fff !important;
+        border: 1px solid #bea36e;
+    }
+
+    .RaffleButton {
+        background: #fee862 !important;
+        width: 50%;
+        height: 3em;
+        color: black;
+        border: 1px solid #bc8775;
+    }
+
+    @media only screen and (min-width: 378px) {
+        .NSContainer {
+            width: 70%;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 52%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .LayerTopSmallScreen {
+            position: absolute;
+            overflow-y: scroll;
+            left: 0;
+        }
+
+        .VCenter {
+            text-align: center;
+        }
+
+        .RaffleButton {
+            width: 70%;
+        }
+    }
+
+
+</style>
 
 <body>
 
-<div class="modal" id="invalid" tabindex="-1" role="dialog">
+
+<div class="modal Text" id="invalid" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,7 +144,7 @@
 </div>
 
 
-<div class="modal fade" id="pay-modal" tabindex="-1" role="dialog"
+<div class="modal fade Text" id="pay-modal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -42,7 +156,7 @@
             </div>
             <form>
                 <div class="modal-body">
-                    You drew <span id="raffle-val" class="text-info rv"></span>
+                    You drew <span id="raffle-val" class="TextAccentTheme font-weight-bolder rv"></span>
                 </div>
                 <div class="form-group ml-3 mr-3 mb-3">
                     <label for="name">Name</label>
@@ -74,11 +188,11 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="draw-again"
-                            data-dismiss="modal">Draw again
+                            data-dismiss="modal">Cancel
                     </button>
 
                     <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-                    <button type="button" class="btn btn-info" onClick="payWithRave()">Pay Now</button>
+                    <button type="button ButtonTheme" class="btn btn-info" onClick="payWithRave()">Pay Now</button>
                 </div>
             </form>
         </div>
@@ -86,49 +200,58 @@
 </div>
 
 
-<div class="drop">
-    <div class="p-3 brand float-left">raffle<span class="text-info h-text">it</span></div>
-    <div class="float-right p-3 mt-1 ">
-        <a href="https://api-raffleit.herokuapp.com/winners" class="btn btn-dark text-white">See winners</a>
+<div class="row FullHeight ">
+    <div class="col-lg-5 col-md-6 col-sm-12 shadow-lg PromoImage">
     </div>
-    <div class="ns-container">
-        <!--        <div class="row ns">-->
-        <!--            <div class="col n" id="nid-1">0</div>-->
-        <!--            <div class="col n cl" id="nid-2">0</div>-->
-        <!--            <div class="col n" id="nid-3">0</div>-->
-        <!--        </div>-->
-        <div class="m-3 text-left font-weight-light" style="font-size: 150%">
-            Please, Enter a number between 0 and 999
-        </div>
-        <div class="input-group mb-3">
-            <input type="number" class="form-control-lg form-control" id="inbox" required
-                   style="height: 3.5em !important;"
-                   placeholder="Number" aria-label="raffle number"
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="random">Random</button>
-            </div>
-            <div class="invalid-feedback">
-                Please provide a valid zip.
-            </div>
+    <div class="col-lg-7  col-md-6 p-3 col-sm-12 LayerTopSmallScreen FullHeight FullWidth Mask text-white">
+
+        <div class="Title pl-3 "><span class="MainTitle font-weight-bold">BAD COMMENTS</span> Movie Raffle
         </div>
 
-        <input type="button" id="raffle" class="btn raffle stop btn-info btn-lg mt-3" value="Raffle" data-toggle="modal"
-        />
+        <div class="container pt-1 pl-1 Text NSContainer">
 
+            <!--<h3>Win a Chance to be featured on the Bad Comments Movie</h3>-->
+
+            <!--            <div class="alert alert-danger" role="alert">-->
+            <!--                <div class="Large">Please enter a number from 0 to 999</div>-->
+            <!--            </div>-->
+
+            <div class="m-3 text-left Text font-weight-light" style="font-size: 150%">
+                Please, Enter a number between 0 and 999
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control-lg shadow-lg form-control" id="inbox" required
+                       style="height: 3.5em !important;"
+                       placeholder="Number" aria-label="raffle number"
+                       aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline ButtonTheme" type="button" id="random">Random</button>
+                </div>
+            </div>
+            <div class="VCenter">
+                <input type="button" id="raffle" class="btn RaffleButton shadow-sm stop btn-outline-dark btn-lg mt-md-3"
+                       value="Place Raffle"
+                       data-toggle="modal"/>
+            </div>
+
+
+            <!--            <div class="m-lg-3 m-4 pt-lg-4">-->
+            <!--                <a href="" class="btn"><img src="https://img.icons8.com/metro/26/000000/instagram-new.png"></a>-->
+
+            <!--            </div>-->
+        </div>
 
     </div>
 </div>
 
 </body>
-<!--<script src="script/jquery.js"></script>-->
+
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script src="script/c.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
+<script src="script/c.js"></script>
 </html>
