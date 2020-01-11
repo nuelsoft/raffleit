@@ -108,7 +108,7 @@
     @media only screen and (max-width: 767px) {
         .LayerTopSmallScreen {
             position: absolute;
-            overflow-y: scroll;
+            overflow-y: auto;
             left: 0;
         }
 
@@ -118,6 +118,9 @@
 
         .RaffleButton {
             width: 70%;
+        }
+        .Text{
+            padding-top: 2em;
         }
     }
 
@@ -154,47 +157,47 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-<!--            <form>-->
-                <div class="modal-body">
-                    You drew <span id="raffle-val" class="TextAccentTheme font-weight-bolder rv"></span>
-                </div>
-                <div class="form-group ml-3 mr-3 mb-3">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="John Mark" required>
-                </div>
+            <!--            <form>-->
+            <div class="modal-body">
+                You drew <span id="raffle-val" class="TextAccentTheme font-weight-bolder rv"></span>
+            </div>
+            <div class="form-group ml-3 mr-3 mb-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="John Mark" required>
+            </div>
 
-                <div class="alert alert-danger container d-none" id="name-val" role="alert">
-                    Name can't be empty
-                </div>
+            <div class="alert alert-danger container d-none" id="name-val" role="alert">
+                Name can't be empty
+            </div>
 
-                <div class="form-group ml-3 mr-3 mb-3">
-                    <label for="phone">Phone</label>
-                    <input type="text" class="form-control" id="phone" placeholder="09012345678" required>
-                </div>
-                <div class="alert alert-danger container d-none" id="phone-val" role="alert">
-                    Phone empty or poorly formatted. <i><b>format: </b>09012345678</i>
-                </div>
+            <div class="form-group ml-3 mr-3 mb-3">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="09012345678" required>
+            </div>
+            <div class="alert alert-danger container d-none" id="phone-val" role="alert">
+                Phone empty or poorly formatted. <i><b>format: </b>09012345678</i>
+            </div>
 
-                <div class="form-group ml-3 mr-3 mb-3">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email"
-                           placeholder="abc@123.xyz" required>
-                </div>
+            <div class="form-group ml-3 mr-3 mb-3">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email"
+                       placeholder="abc@123.xyz" required>
+            </div>
 
-                <div class="alert alert-danger container d-none" id="email-val" role="alert">
-                    Email empty or poorly formatted. <i><b>format: </b>abc@123.xyz</i>
-                </div>
+            <div class="alert alert-danger container d-none" id="email-val" role="alert">
+                Email empty or poorly formatted. <i><b>format: </b>abc@123.xyz</i>
+            </div>
 
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="draw-again"
-                            data-dismiss="modal">Cancel
-                    </button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="draw-again"
+                        data-dismiss="modal">Cancel
+                </button>
 
-                    <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-                    <button type="button ButtonTheme" class="btn btn-info" onClick="payWithRave()">Pay Now</button>
-                </div>
-<!--            </form>-->
+                <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+                <button type="button ButtonTheme" class="btn btn-info" onClick="payWithRave()">Pay Now</button>
+            </div>
+            <!--            </form>-->
         </div>
     </div>
 </div>
@@ -205,10 +208,10 @@
     </div>
     <div class="col-lg-7  col-md-6 p-3 col-sm-12 LayerTopSmallScreen FullHeight FullWidth Mask text-white">
 
-        <div class="Title pl-3 "><span class="MainTitle font-weight-bold">BAD COMMENTS</span> Movie Raffle
+        <div class="Title pl-3 "><span class="MainTitle font-weight-bold">BAD COMMENTS</span> Movie Promo
         </div>
 
-        <div class="container pt-1 pl-1 Text NSContainer">
+        <div class="container pt-1 pl-1 mt-sm-5 mt-md-4 pt-sm-3 Text NSContainer">
 
             <!--<h3>Win a Chance to be featured on the Bad Comments Movie</h3>-->
 
@@ -216,10 +219,10 @@
             <!--                <div class="Large">Please enter a number from 0 to 999</div>-->
             <!--            </div>-->
 
-            <div class="m-3 text-left Text font-weight-light" style="font-size: 150%">
-                Please, Enter a number between 0 and 999
+            <div class="m-3text-left Text font-weight-light" style="font-size: 150%">
+                Please, Enter a number between 0 and 999 or click <span class="font-weight-bold">"Random"</span>
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 mt-5">
                 <input type="number" class="form-control-lg shadow-lg form-control" id="inbox" required
                        style="height: 3.5em !important;"
                        placeholder="Number" aria-label="raffle number"
@@ -229,7 +232,7 @@
                 </div>
             </div>
             <div class="VCenter">
-                <input type="button" id="raffle"  class="btn RaffleButton shadow-sm stop btn-outline-dark btn-lg mt-md-3"
+                <input type="button" id="raffle" class="btn RaffleButton shadow-sm stop btn-outline-dark btn-lg mt-md-3"
                        value="Place Raffle"
                        data-toggle="modal"/>
             </div>
