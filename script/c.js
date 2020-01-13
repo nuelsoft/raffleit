@@ -50,7 +50,7 @@ $('#draw-again').on('click', () => {
     }, 600);
 });
 
-const API_publicKey = "FLWPUBK_TEST-4be08a2d552a7dcd0056882cacc767d3-X";
+const API_publicKey = "FLWPUBK_TEST-2e6c693ea1c6fb4be6588535a243a585-X";
 
 function pay() {
     let phone = $('#phone');
